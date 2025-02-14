@@ -117,7 +117,7 @@
 				if (this.currentPageScrollTop > 130) {
 					// 控制列表滚动位置
 					uni.pageScrollTo({
-						scrollTop: 130
+						scrollTop: 50
 					});
 				}
 				// 解决官方 swiper 在 change 里改变 current 值无限左右抖动的 bug
