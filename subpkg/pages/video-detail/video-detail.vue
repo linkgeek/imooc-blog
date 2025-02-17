@@ -171,6 +171,7 @@ export default {
         font-size: $uni-font-size-lg;
         font-weight: bold;
       }
+	  .list { margin-bottom: 60px; }
     }
   }
 }
