@@ -1,5 +1,5 @@
 import store from '../store';
-//const BASE_URL = 'https://api.imooc-blog.lgdsunday.club/api';
+
 //const BASE_URL = 'http://192.168.18.70:6060/api';
 const BASE_URL = 'http://127.0.0.1:6060/api';
 

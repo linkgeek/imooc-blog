@@ -12,7 +12,7 @@ H5：imooc.blog.lgdsunday.club
 ## 项目基本目录结构
 api 模块请求接口目录
 components 全局公用组件
-filters 过滤器，字符过滤转换函数定义
+filters 过滤器，例如字符过滤转换函数定义
 node_modules node包管理
 pages 应用的页面文件存放目录
 static 存放静态资源
@@ -24,7 +24,6 @@ utils 工具库目录
 App.vue 应用入口页面，应用配置、配置App全局样式以及监听
 main.js Vue初始化入口文件，配置Vue实例、加载组件、初始化等
 manifest.json 应用配置文件，用于指定应用的名称、描述、图标、权限；平台特有配置等
-
 pages.json 配置页面的路由、窗口样式、tabBar导航条、选项卡等页面类信息
 -- pages 页面路由
 ---- style
