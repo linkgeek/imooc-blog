@@ -66,6 +66,7 @@ export default {
         padding-top: $uni-spacing-row-sm;
         font-size: $uni-font-size-base;
         color: $uni-text-color;
+        word-break: break-all; /* 强制换行 */
       }
       .item-bottom-box {
         margin-top: $uni-spacing-col-sm;

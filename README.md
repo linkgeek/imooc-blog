@@ -15,14 +15,14 @@ components 全局公用组件
 filters 过滤器，例如字符过滤转换函数定义
 node_modules node包管理
 pages 应用的页面文件存放目录
-static 存放静态资源，如图片、字体等，不会被Webpack打包处理
+static 存放静态资源，如图片、字体等，不会被Webpack打包编译处理
 store 全局状态管理，数据缓存
 styles 样式文件
 subpkg 分包页面目录
 unpackage 打包存放目录
 utils 工具库目录
-App.vue 应用入口页面，应用配置、配置App全局样式以及监听
-main.js Vue初始化入口文件，配置Vue实例、加载组件、初始化等
+App.vue 应用主组件，应用配置、配置App全局样式以及监听
+main.js Vue初始化入口文件，配置Vue实例、加载组件、初始化Vue实例等
 manifest.json 应用配置文件，用于指定应用的名称、描述、图标、权限；平台特有配置等
 pages.json 配置页面的路由、窗口样式、tabBar导航条、选项卡等页面类信息
 -- pages 页面路由
@@ -44,15 +44,15 @@ app-plus: {} //App节点配置项
 root //子包的根目录
 pages //参数同主包pages
 
-uni.scss 内置的常用样式变量
+uni.scss 一个全局的样式文件，用于定义项目中的全局样式变量和样式规则。Uni-app 推荐使用 scss 作为样式预处理器，这样可以方便地定义和使用变量、混合（mixin）、嵌套等高级 CSS 特性。
 
 ## uni-app 应用生命周期
+应用生命周期在 App.vue 中定义，主要包括以下几个钩子函数：
 onLauch 当uni-app初始化完成时触发（全局只触发一次）
 onShow 当uni-app启动，或从后台进入前台显示
 onHide 当uni-app从前台进入后台
 onError 当uni-app报错时触发
 
-在应用入口页面 App.vue
 ```
 <script>
 export default {
@@ -73,7 +73,7 @@ export default {
 ```
 
 ## uni-app 页面生命周期函数
-
+页面生命周期在每个页面的 .vue 文件中定义，主要包括以下钩子函数：
 ```
 <script>
 export default {
@@ -94,6 +94,15 @@ export default {
 （1）不要在选项属性或回调上使用箭头函数，比如 created: () => console.log(this.a) 或 vm.$watch('a', newValue => this.myMethod())。因为箭头函数是和父级上下文绑定在一起的，this 不会是如你做预期的 Vue 实例，且 this.a 或 this.myMethod 也会是未定义的。
 （2）建议使用 uni-app 的 onReady 代替 vue 的 mounted。
 （3）建议使用 uni-app 的 onLoad 代替 vue 的 created。
+
+## Uni-app 跨平台差异处理
+Uni-app 支持条件编译，可以在代码中根据不同的平台编译不同的代码。支持的平台标识包括：
+H5: 浏览器环境
+MP-WEIXIN: 微信小程序
+MP-ALIPAY: 支付宝小程序
+MP-BAIDU: 百度小程序
+MP-QQ: QQ 小程序
+APP-PLUS: App 原生平台（包括 Android 和 iOS）
 
 ## 跳转
 声明式导航

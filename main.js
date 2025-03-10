@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import App from './App';
+
 // 导入 vuex 实例
 import store from './store';
 // 引入公共样式

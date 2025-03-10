@@ -73,7 +73,7 @@
 				uni.showLoading({
 					title: '加载中'
 				});
-				// 模拟登录 store user login(context, userProfile)
+				// 模拟登录账号信息 store user login(context, userProfile)
 				await this.login({
 					encryptedData: 'BmGEMqpGI5w',
 					errMsg: 'getUserProfile:ok',
