@@ -15,7 +15,6 @@ Object.keys(filters).forEach((key) => {
 });
 
 Vue.config.productionTip = false; //Vue在生产环境启动时是否显示提示信息
-
 App.mpType = 'app'; //用于区分应用程序类型，app表示原生应用
 
 //声明当前应用实例

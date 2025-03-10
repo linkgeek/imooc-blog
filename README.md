@@ -15,11 +15,11 @@ components 全局公用组件
 filters 过滤器，例如字符过滤转换函数定义
 node_modules node包管理
 pages 应用的页面文件存放目录
-static 存放静态资源
+static 存放静态资源，如图片、字体等，不会被Webpack打包处理
 store 全局状态管理，数据缓存
 styles 样式文件
 subpkg 分包页面目录
-unpackage 打包存放目录，app资源配置目录
+unpackage 打包存放目录
 utils 工具库目录
 App.vue 应用入口页面，应用配置、配置App全局样式以及监听
 main.js Vue初始化入口文件，配置Vue实例、加载组件、初始化等
@@ -179,6 +179,15 @@ mescroll-body: mescroll是一个下拉刷新和上拉加载js框架, <mescroll-b
 
 ## Vuex
 Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。
+
+Vuex包含以下几个核心概念：
+
+State：状态对象，包含应用的所有状态数据。
+Getters：相当于Vue的计算属性，用于派生出一些状态。
+Mutations：同步更改状态的方法，每个mutation都有一个字符串的事件类型和一个回调函数。
+Actions：类似于mutations，不同之处在于action提交的是mutation，而不是直接变更状态。Action可以包含任意异步操作。
+Modules：将状态分割成模块化的结构，每个模块有自己的state、mutations、actions、getters。
+
 
 ### Store (容器/仓库)
 不能直接改变 Store 中的状态，改变 store 中的状态的唯一途径就是显式地提交 (commit) mutation。
