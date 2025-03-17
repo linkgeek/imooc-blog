@@ -10,21 +10,53 @@ H5：imooc.blog.lgdsunday.club
 2. 运行该项目前，请先执行 `npm install` 下来依赖包
 
 ## 项目基本目录结构
-api 模块请求接口目录
-components 全局公用组件
-filters 过滤器，例如字符过滤转换函数定义
-node_modules node包管理
-pages 应用的页面文件存放目录
-static 存放静态资源，如图片、字体等，不会被Webpack打包编译处理
-store 全局状态管理，数据缓存
-styles 样式文件
-subpkg 分包页面目录
-unpackage 打包存放目录
-utils 工具库目录
-App.vue 应用主组件，应用配置、配置App全局样式以及监听
-main.js Vue初始化入口文件，配置Vue实例、加载组件、初始化Vue实例等
-manifest.json 应用配置文件，用于指定应用的名称、描述、图标、权限；平台特有配置等
-pages.json 配置页面的路由、窗口样式、tabBar导航条、选项卡等页面类信息
+```
+|-- api // 模块请求接口目录
+|-- components // 全局公用组件
+|-- filters // 过滤器，例如字符过滤转换函数定义
+|-- node_modules // node包管理
+|-- pages // 应用的页面文件存放目录
+|-- static // 存放静态资源，如图片、字体等，不会被Webpack打包编译处理
+|-- store // 全局状态管理，数据缓存
+    |-- modules // store子模块目录
+    |-- index.js
+|-- styles // 样式文件
+|-- subpkg // 分包页面目录
+|-- unpackage // 打包存放目录
+|-- utils // 工具库目录
+	|-- index.js
+    |-- request.js // 请求封装
+```
+
+api：模块请求接口目录
+
+components：全局公用组件
+
+filters：过滤器，例如字符过滤转换函数定义
+
+node_modules：node包管理
+
+pages：应用的页面文件存放目录
+
+static：存放静态资源，如图片、字体等，不会被Webpack打包编译处理
+
+store：全局状态管理，数据缓存
+
+styles：样式文件
+
+subpkg：分包页面目录
+
+unpackage：打包存放目录
+
+utils：工具库目录
+
+App.vue：应用主组件，应用配置、配置App全局样式以及监听
+
+main.js：Vue初始化入口文件，配置Vue实例、加载组件、初始化Vue实例等
+
+manifest.json：应用配置文件，用于指定应用的名称、描述、图标、权限；平台特有配置等
+
+pages.json：配置页面的路由、窗口样式、tabBar导航条、选项卡等页面类信息
 -- pages 页面路由
 ---- style
 navigationBarTitleText: "首页", //导航标题
