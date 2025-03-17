@@ -11,72 +11,54 @@ H5：imooc.blog.lgdsunday.club
 
 ## 项目基本目录结构
 ```
-|-- api // 模块请求接口目录
-|-- components // 全局公用组件
-|-- filters // 过滤器，例如字符过滤转换函数定义
-|-- node_modules // node包管理
-|-- pages // 应用的页面文件存放目录
-|-- static // 存放静态资源，如图片、字体等，不会被Webpack打包编译处理
-|-- store // 全局状态管理，数据缓存
-    |-- modules // store子模块目录
+|-- api //模块请求接口目录
+|-- components //全局公用组件
+|-- filters //过滤器，例如字符过滤转换函数定义
+|-- node_modules //node包管理
+|-- pages //应用的页面文件存放目录
+|-- static //存放静态资源，如图片、字体等，不会被Webpack打包编译处理
+|-- store //全局状态管理，数据缓存
+    |-- modules //store子模块目录
     |-- index.js
-|-- styles // 样式文件
-|-- subpkg // 分包页面目录
-|-- unpackage // 打包存放目录
-|-- utils // 工具库目录
+|-- styles //样式文件
+|-- subpkg //分包页面目录
+|-- unpackage //打包存放目录
+|-- utils //工具库目录
 	|-- index.js
-    |-- request.js // 请求封装
+    |-- request.js //请求封装
+|-- App.vue //应用主组件，应用配置、配置App全局样式以及监听
+|-- main.js //Vue初始化入口文件，配置Vue实例、加载组件、初始化Vue实例等
+|-- manifest.json //应用配置文件，用于指定应用的名称、描述、图标、权限；平台特有配置等
+|-- pages.json //配置页面的路由、窗口样式、tabBar导航条、选项卡等页面类信息
+	|-- pages //页面路由
+	|-- globalStyle //全局样式
+	|-- tabBar //多tab应用一级导航栏，最少2个、最多5个
+	|-- subPackages //分包配置，用于解决主包文件过大问题
+|-- uni.scss //一个全局的样式文件，用于定义项目中的全局样式变量和样式规则。Uni-app 推荐使用 scss 作为样式预处理器，这样可以方便地定义和使用变量、混合（mixin）、嵌套等高级 CSS 特性。
 ```
 
-api：模块请求接口目录
+#### pages.json： 
 
-components：全局公用组件
+##### pages -> style
 
-filters：过滤器，例如字符过滤转换函数定义
+- navigationBarTitleText: "首页", //导航标题
+- navigationBarTextStyle: "black", //导航字体颜色
+- navigationBarBackgroundColor: "#F8F8F8", //导航背景颜色
+- enablePullDownRefresh: true, //下拉刷新
 
-node_modules：node包管理
+##### globalStyle
 
-pages：应用的页面文件存放目录
+- navigationBarTitleText: "uni-app", //导航标题
+- navigationBarTextStyle: "black", //导航字体颜色
 
-static：存放静态资源，如图片、字体等，不会被Webpack打包编译处理
+- navigationBarBackgroundColor: "#F8F8F8", //导航背景颜色
+- backgroundColor: "#F8F8F8" //页面背景颜色
+- app-plus: {} //App节点配置项
 
-store：全局状态管理，数据缓存
+##### subPackages
 
-styles：样式文件
-
-subpkg：分包页面目录
-
-unpackage：打包存放目录
-
-utils：工具库目录
-
-App.vue：应用主组件，应用配置、配置App全局样式以及监听
-
-main.js：Vue初始化入口文件，配置Vue实例、加载组件、初始化Vue实例等
-
-manifest.json：应用配置文件，用于指定应用的名称、描述、图标、权限；平台特有配置等
-
-pages.json：配置页面的路由、窗口样式、tabBar导航条、选项卡等页面类信息
--- pages 页面路由
----- style
-navigationBarTitleText: "首页", //导航标题
-navigationBarTextStyle: "black", //导航字体颜色
-navigationBarBackgroundColor: "#F8F8F8", //导航背景颜色
-enablePullDownRefresh: true, //下拉刷新
-
--- globalStyle 全局样式
-navigationBarTextStyle: "black", //导航字体颜色
-navigationBarTitleText: "uni-app", //导航标题
-navigationBarBackgroundColor: "#F8F8F8", //导航背景颜色
-backgroundColor: "#F8F8F8" //页面背景颜色
-app-plus: {} //App节点配置项
-
--- tabBar 多tab应用一级导航栏，最少2个、最多5个
--- subPackages 分包配置，用于解决主包文件过大问题
-root //子包的根目录
-pages //参数同主包pages
-
-uni.scss 一个全局的样式文件，用于定义项目中的全局样式变量和样式规则。Uni-app 推荐使用 scss 作为样式预处理器，这样可以方便地定义和使用变量、混合（mixin）、嵌套等高级 CSS 特性。
+- root: " " //子包的根目录
+- pages: [] //参数同主包pages
 
 ## uni-app 应用生命周期
 应用生命周期在 App.vue 中定义，主要包括以下几个钩子函数：
